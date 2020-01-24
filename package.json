@@ -1,5 +1,5 @@
 {
-  "name": "emoji-picker-react",
+  "name": "@classdojo/emoji-picker-react",
   "version": "3.1.1",
   "description": "Emoji picker component for react applications",
   "main": "dist/index.js",

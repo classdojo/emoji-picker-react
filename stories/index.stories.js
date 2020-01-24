@@ -6,4 +6,4 @@ import EmojiPicker from '../src';
 
 import { Button, Welcome } from '@storybook/react/demo';
 
-storiesOf('EmojiPicker', module).add('EmojiPicker', () => <EmojiPicker onEmojiClick={(e, em) => console.log(em)} emojiUrl="https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160"/>);
+storiesOf('EmojiPicker', module).add('EmojiPicker', () => <EmojiPicker onEmojiClick={(e, em) => console.log(em)} emojiUrl="https://static.classdojo.com/emoji/joypixels-5.0.2-premium/png/unicode/512"/>);
