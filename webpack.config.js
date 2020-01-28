@@ -43,7 +43,7 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new webpack.DefinePlugin({
       DEFAULT_EMOJI_URL: JSON.stringify(
-        "https://static.classdojo.com/emoji/joypixels-5.0.2-premium/png/unicode/50""
+        "https://static.classdojo.com/emoji/joypixels-5.0.2-premium/png/unicode/50"
       )
     })
   ],
