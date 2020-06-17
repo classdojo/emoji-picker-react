@@ -1,50 +1,47 @@
 module.exports = {
-    'env': {
-        'es6': true,
-        'jest': true,
-        'node': true,
-        'browser': true
+  extends: ["classdojo/webpack", "plugin:testing-library/react"],
+  plugins: ["jest", "testing-library"],
+  parserOptions: {
+    comment: true,
+  },
+  settings: {
+    "import/resolver": {
+      node: {
+        extensions: [".js", ".jsx", ".json", ".ts"],
+        moduleDirectory: [".", "node_modules"],
+      },
     },
-    'extends': [
-        'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:import/errors',
-        'plugin:import/warnings',
-        // 'plugin:react-hooks'
+    react: {
+      version: "detect",
+    },
+  },
+  rules: {
+    curly: 0,
+    indent: 0,
+    "space-before-function-paren": 0,
+    "react/prop-types": 1,
+    "react/no-unused-prop-types": 2,
+    "react/no-this-in-sfc": 2,
+    "no-confusing-arrow": 0,
+    camelcase: ["error", { properties: "never", allow: ["^UNSAFE_"] }],
+    "default-case": 2,
+    complexity: ["warn", 15],
+    "max-len": 0,
+    "comma-dangle": [
+      "error",
+      {
+        arrays: "always-multiline",
+        objects: "always-multiline",
+        imports: "always-multiline",
+        exports: "always-multiline",
+        functions: "ignore",
+      },
     ],
-    'parserOptions': {
-        'ecmaVersion': 2018,
-        'sourceType': 'module'
-    },
-    'globals': {
-        'DEFAULT_EMOJI_URL': true,
-    },
-    'rules': {
-        'indent': [
-            'error',
-            4
-        ],
-        'quotes': [
-            'error',
-            'single'
-        ],
-        'semi': [
-            'error',
-            'always'
-        ],
-        'eqeqeq': [
-            'error',
-            'always'
-        ],
-        'no-trailing-spaces': ['error', { 'ignoreComments': true }],
-        'consistent-this': 2,
-        'import/no-self-import': 2,
-        'import/no-internal-modules': 0,
-        'import/no-dynamic-require': 0,
-        'import/no-useless-path-segments': 2,
-        'import/order': 1,
-        'import/newline-after-import': 2,
-        // "react-hooks/rules-of-hooks": "error",
-        // "react-hooks/exhaustive-deps": "warn"
-    }
+  },
+  env: {
+    "jest/globals": true,
+  },
+  globals: {
+    process: true,
+  },
 };
