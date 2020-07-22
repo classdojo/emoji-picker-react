@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ealush/emoji-picker-react.git"
+    "url": "ssh://git@github.com/classdojo/emoji-picker-react.git"
   },
   "keywords": [
     "emoji-picker",
