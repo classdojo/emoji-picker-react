@@ -20,7 +20,7 @@ export function emojiNames(emoji: DataEmoji): string[] {
 }
 
 export function addedIn(emoji: DataEmoji): number {
-  return parseFloat(emoji[EmojiProperties.added_in]);
+  return parseFloat(emoji[EmojiProperties.added_in] || "15.0");
 }
 
 export function emojiName(emoji?: DataEmoji): string {

@@ -4,7 +4,7 @@ export type DataEmoji = {
   n: string[];
   u: string;
   v?: string[];
-  a: string;
+  a?: string;
 };
 export type DataEmojis = DataEmoji[];
 
