@@ -1,5 +1,5 @@
 {
-    "travel & places": [
+    "travel_places": [
       {
         "n": [
           "earth globe europe-africa",
@@ -1066,7 +1066,7 @@
         "u": "1f30a"
       }
     ],
-    "food & drink": [
+    "food_drink": [
       {
         "n": [
           "grapes"
@@ -4800,7 +4800,7 @@
         "u": "1f535"
       }
     ],
-    "animals & nature": [
+    "animals_nature": [
       {
         "n": [
           "monkey face",
@@ -6274,7 +6274,7 @@
         "u": "1f6d2"
       }
     ],
-    "smileys & people": [
+    "smileys_people": [
       {
         "n": [
           "grinning face",
