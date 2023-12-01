@@ -3940,6 +3940,14 @@
     ],
     "symbols": [
       {
+        "n": ["latin cross"],
+        "u": "271d"
+      },
+      {
+        "n": ["orthodox cross"],
+        "u": "2626"
+      },
+      {
         "n": [
           "automated teller machine",
           "atm"
