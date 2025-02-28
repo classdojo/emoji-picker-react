@@ -25,4 +25,5 @@
   color: var(--epr-category-label-text-color);
   z-index: var(--epr-category-label-z-index);
   height: var(--epr-category-label-height);
+  font-size: var(--epr-category-label-size);
 }

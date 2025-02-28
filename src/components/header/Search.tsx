@@ -20,12 +20,13 @@ import Relative from '../Layout/Relative';
 import { Button } from '../atoms/Button';
 import { useSearchInputRef } from '../context/ElementRefContext';
 
-import './Search.css';
 import { SkinTonePicker } from './SkinTonePicker';
 
-export function SearchContainer() {
-  const searchDisabled = useSearchDisabledConfig();
+import './Search.css';
 
+export function SearchContainer() {
+  const { resultsNumber } = useFilter();
+  const searchDisabled = useSearchDisabledConfig();
   const isSkinToneInSearch = useIsSkinToneInSearch();
 
   if (searchDisabled) {
@@ -37,6 +38,13 @@ export function SearchContainer() {
       <Search />
 
       {isSkinToneInSearch ? <SkinTonePicker /> : null}
+      {resultsNumber !== null && (
+        <div className="epr-header-search-results" role="status">
+          {`${resultsNumber} ${
+            resultsNumber === 1 ? 'result' : 'results'
+          } available`}
+        </div>
+      )}
     </Flex>
   );
 }
