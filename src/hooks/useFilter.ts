@@ -72,7 +72,7 @@ export function useFilter() {
 
   const resultsNumber = useMemo(() => {
     if (!searchTerm) {
-      return allEmojis.flat().length;
+      return null;
     }
 
     return allEmojis
