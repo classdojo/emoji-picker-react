@@ -9,9 +9,14 @@ import {
   useSearchTermState,
 } from '../components/context/PickerContext';
 import { DataEmoji } from '../dataUtils/DataTypes';
-import { emojiNames } from '../dataUtils/emojiSelectors';
+import {
+  allEmojis,
+  emojiNames,
+} from '../dataUtils/emojiSelectors';
 
+import { useIsEmojiDisallowed } from './useDisallowedEmojis';
 import { useFocusSearchInput } from './useFocus';
+import { useIsEmojiHidden } from './useIsEmojiHidden';
 
 function useSetFilterRef() {
   const filterRef = useFilterRef();
@@ -61,13 +66,29 @@ export function useFilter() {
   const filterRef = useFilterRef();
   const setFilterRef = useSetFilterRef();
   const applySearch = useApplySearch();
+  const isEmojiDisallowed = useIsEmojiDisallowed();
+  const isEmojiHidden = useIsEmojiHidden();
 
   const [searchTerm] = useSearchTermState();
 
+  const resultsNumber = allEmojis
+    .map(emoji => {
+      const { failedToLoad, filteredOut, hidden } = isEmojiHidden(emoji);
+      const isDisallowed = isEmojiDisallowed(emoji);
+
+      if (isDisallowed || failedToLoad || filteredOut || hidden) {
+        return [];
+      }
+
+      return emoji;
+    })
+    .flat().length;
+
   return {
-    onChange,
-    searchTerm,
     SearchInputRef,
+    onChange,
+    resultsNumber,
+    searchTerm
   };
 
   function onChange(inputValue: string) {

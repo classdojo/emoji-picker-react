@@ -1,4 +1,10 @@
 .EmojiPickerReact .epr-header .epr-header-overlay {
   padding: var(--epr-header-padding);
   z-index: var(--epr-header-overlay-z-index);
+  flex-wrap: wrap;
+}
+
+.EmojiPickerReact .epr-header .epr-header-overlay .epr-header-search-results {
+  width: 100%;
+  padding-top: 5px;
 }
