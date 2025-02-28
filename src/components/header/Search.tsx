@@ -44,8 +44,9 @@ export function SearchContainer() {
       {isSkinToneInSearch ? <SkinTonePicker /> : null}
       {searchTerm && (
         <div className="epr-header-search-results" role="status">
-          {resultsNumber}{' '}
-          {`${resultsNumber === 1 ? 'result' : 'results'} available`}
+          {`${resultsNumber} ${
+            resultsNumber === 1 ? 'result' : 'results'
+          } available`}
         </div>
       )}
     </Flex>
